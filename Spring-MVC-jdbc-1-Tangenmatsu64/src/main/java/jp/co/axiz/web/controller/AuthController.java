@@ -1,17 +1,13 @@
 package jp.co.axiz.web.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import jp.co.axiz.web.service.LoginService;
-
+@Controller
 public class AuthController {
 
-	 @RequestMapping( "/login")
+	 @RequestMapping("/login")
 	 public String login(Model model) {
 	 return "login";
 	 }
@@ -19,26 +15,31 @@ public class AuthController {
 
 
 
-	@Autowired
-	private LoginService loginservice;
+	//@Autowired
+	//private LoginService loginservice;
 
-	@RequestMapping(value="/post",method=RequestMethod.POST)
-	public String post(@ModelAttribute("login") Admin admin, Model model) {
+	//@RequestMapping(value="/login",method=RequestMethod.POST)
+	//public String post(@ModelAttribute("login") Admin admin, Model model) {
+		//return "login";
+
+
 
 
 
 		//List<Admin> list = loginservice.findByIdAndPassword( id,  pass);
 
-		if (admin != null) {
+		//if (admin != null) {
 
-			model.addAttribute("user", admin);
+			//model.addAttribute("user", admin);
 
-			return "menu.jsp";
-		} else {
-			model.addAttribute("errmsg", "IDまたはPASSが間違っています");
-			return "login.jsp";
-		}
+			//return "menu.jsp";
+		//} else {
+			//model.addAttribute("errmsg", "IDまたはPASSが間違っています");
+			// System.out.println("login");
+			//return "login.jsp";
+
+		//}
 	}
-	}
+	//}
 
 

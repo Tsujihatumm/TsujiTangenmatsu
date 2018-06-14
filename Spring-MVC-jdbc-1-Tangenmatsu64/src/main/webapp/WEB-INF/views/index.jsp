@@ -11,8 +11,7 @@
 <title>通常画面</title>
 </head>
 <body>
-<form:form action="index" modelAttribute="test">
+
 <a href="login">通常ログイン</a>
-</form:form>
 </body>
 </html>
